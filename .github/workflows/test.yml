@@ -7,7 +7,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: mshick/add-pr-comment@v1
+      - name: Add comment
+        uses: mshick/add-pr-comment@v1
         with:
           message: |
             **Hello**
@@ -16,5 +17,5 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]' # The user.login for temporary GitHub tokens
           allow-repeats: false # This is the default
-        run:
-           exit 1
+      - name: exit 1 
+        run: exit 1  
